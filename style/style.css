@@ -1,0 +1,179 @@
+*{
+  margin: 0%;
+  pad: 0;
+  
+}
+
+@font-face {
+  font-family: "Simpletix";
+  src: url(../font/simpletix.otf);
+}
+
+body{
+  font-family: Simpletix;
+  text-align: justify;
+}
+
+/* start navigation bar*/
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: green;
+  position: relative;
+}
+.nav > .nav-header {
+  display: inline;
+}
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+.nav > .nav-btn {
+  display: none;
+}
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 13px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.nav > #nav-check {
+  display: none;
+}
+
+/* minimizes navigation bar if screen is below 600px*/
+@media (max-width:787px) {
+  
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 20px;
+    height: 30px;
+    padding: 10px;
+    padding-right: 20px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+/* end navigation bar*/
+img {
+  height: auto;
+  width: auto;
+}
+
+.section {
+  padding: 20px 20px 50px 20px;
+  background-color: green;
+
+  height: 100vh;
+  color: white;
+}
+
+.section h2{
+  padding-bottom: 20px;
+}
+
+/* images as background */
+.section.effects{
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+  url(../images/effects-blackandwhite.jpg);
+  background-size: cover;
+  background-position: bottom;
+
+  color: white;
+}
+
+.section.organizations{
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+  url(../images/organizations-blackandwhite.jpg);
+  background-size: cover;
+  background-position: bottom;
+
+  color: white;
+}
+
+.section.what-do{
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+  url(../images/what-do.jpg);
+  background-size: cover;
+  background-position: bottom;
+
+  color: white;
+}
+
+.section.the-good{
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+  url(../images/the-good.jpg);
+  background-size: cover;
+  background-position: bottom;
+
+  color: white;
+}
+.sectionheader{
+  text-align: center;
+}
+#navbar{
+  background-color: transparent;
+}
+.HomePage {
+  /* linear-gradient adds gradent to the image */
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+  url(../images/header-blackandwhite.jpg);
+  background-size: cover;
+  background-position: bottom;
+  
+  width: 100%;
+  height: 100vh;  /* gets the height of the display */
+
+  text-align: center;
+}
+
+.HomePage h1{
+  color: whitesmoke;
+  padding: 50vh 0 0 0;
+}
