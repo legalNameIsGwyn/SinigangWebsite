@@ -9,17 +9,28 @@
   src: url(../font/simpletix.otf);
 }
 
+@font-face {
+  font-family: "MarketDeco";
+  src: url(../font/Market_Deco.ttf);
+}
+
 body{
   font-family: Simpletix;
   text-align: justify;
 }
 
-/* start navigation bar*/
+img {
+  height: auto;
+  width: 100%;
+}
+
+
 .nav {
   height: 50px;
   width: 100%;
   background-color: green;
-  position: relative;
+  position: fixed;
+  top: 0;
 }
 .nav > .nav-header {
   display: inline;
@@ -50,69 +61,20 @@ body{
 .nav > #nav-check {
   display: none;
 }
-
-/* minimizes navigation bar if screen is below 600px*/
-@media (max-width:787px) {
-  
-  .nav > .nav-btn {
-    display: inline-block;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-  }
-  .nav > .nav-btn > label {
-    display: inline-block;
-    width: 20px;
-    height: 30px;
-    padding: 10px;
-    padding-right: 20px;
-  }
-  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  .nav > .nav-btn > label > span {
-    display: block;
-    width: 25px;
-    height: 10px;
-    border-top: 2px solid #eee;
-  }
-  .nav > .nav-links {
-    position: absolute;
-    display: block;
-    width: 100%;
-    background-color: #333;
-    height: 0px;
-    transition: all 0.3s ease-in;
-    overflow-y: hidden;
-    top: 50px;
-    left: 0px;
-  }
-  .nav > .nav-links > a {
-    display: block;
-    width: 100%;
-  }
-  .nav > #nav-check:not(:checked) ~ .nav-links {
-    height: 0px;
-  }
-  .nav > #nav-check:checked ~ .nav-links {
-    height: calc(100vh - 50px);
-    overflow-y: auto;
-  }
+.HomePage #kids{
+  visibility: hidden;
 }
 
-/* end navigation bar*/
-img {
-  height: auto;
-  width: auto;
-}
+/* section */
 
 .section {
-  padding: 20px 20px 50px 20px;
+  padding: 50px 20px 50px 20px;
   background-color: green;
 
   height: 100vh;
   color: white;
 }
+
 
 .section h2{
   padding-bottom: 20px;
@@ -157,9 +119,7 @@ img {
 .sectionheader{
   text-align: center;
 }
-#navbar{
-  background-color: transparent;
-}
+
 .HomePage {
   /* linear-gradient adds gradent to the image */
   background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
@@ -176,4 +136,103 @@ img {
 .HomePage h1{
   color: whitesmoke;
   padding: 50vh 0 0 0;
+}
+
+/* Media rule for section class */
+@media (max-width:787px) {
+  .HomePage #notKids {
+    visibility: hidden;
+  }
+  .HomePage #kids{
+    visibility: visible;
+    padding: 0%;
+  }
+
+  .nav {
+  background-color: #e2f7de
+  }
+  .nav > .nav-header > .nav-title {
+    color: rgb(0, 0, 0);
+    font-family: MarketDeco;
+    font-size: 24px;
+  }
+
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 20px;
+    height: 30px;
+    padding: 10px;
+    padding-right: 20px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(80, 239, 251, 0.3);
+  }
+
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid rgb(0, 0, 0);
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: rgb(242,244,251);
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    color: black;
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+
+    .section{
+    background-color:#f2ffff;
+    color: black;
+    }
+
+    .section.effects{
+    background-image: linear-gradient(rgba(242,244,251,0.9),rgba(212,255,234,0.9)),
+    url(../images/mobileimages/m2.jpg);
+    color: black;
+    }
+
+    .HomePage {
+    background-image: linear-gradient(rgba(219,220,255,0.9),rgba(214,239,251,0.9)),
+    url(../images/mobileimages/m5.jpg);
+    }
+
+    .HomePage h1{
+    color: rgb(50,50,50);
+    }
+
+    .section.what-do{
+      background-image: linear-gradient(rgba(230,220,255,0.9),rgba(226,247,222,0.9)),
+      url(../images/mobileimages/kids/k2.jpg);
+      color: black;
+    }
+
+    .section.the-good{
+    background-image: linear-gradient(rgba(219,217,228,0.9),rgba(254,255,163,0.9)),
+    url(../images/mobileimages/m4.jpeg);
+    color: black;
+    }
 }
